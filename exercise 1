@@ -1,0 +1,59 @@
+/******************************************************************************
+question 1
+*******************************************************************************/
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    double meal_price, sc_input; // meal price and service charge 
+    float order_qty, student_pax; // order quantity, number of students
+    double subtotal,ServiceCharge, FinalBill, student_share, sc_rate;
+    
+    //input
+    cout << "Enter Meal Price:   ";
+    cin >> meal_price;
+    cout << "Enter Quantity:   ";
+    cin >> order_qty;
+    cout << "Enter Service Charge (eg. 5 for 5%) :   ";
+    cin >> sc_input;
+    cout << "Enter Number of Students:   ";
+    cin >> student_pax;
+    
+    //calculations
+    sc_rate = (sc_input / 100.0); //percent conversion
+    
+    
+    subtotal = (meal_price * order_qty); //subtotal
+    
+    ServiceCharge = (subtotal * sc_rate);// service Charge
+    
+    FinalBill = (subtotal + ServiceCharge);// FinalBill
+    
+    student_share = (FinalBill / student_pax);// price per student
+    
+    // output
+    
+    cout << "ORDER SUMMARY\n";
+    
+    cout << fixed << setprecision(2); //set precision
+    
+    cout << "Subtotal:  " << subtotal  << endl;
+    cout << "Service Charge:  " << ServiceCharge << endl;
+    cout << "Final Bill:  " << FinalBill << endl;
+    cout << "Share/student:  " << student_share << endl;
+    
+
+    return 0;
+}
+
+
+
+
+
+*************************
+
+
+
