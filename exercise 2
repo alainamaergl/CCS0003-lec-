@@ -1,0 +1,47 @@
+/******************************************************************************
+question 2
+*******************************************************************************/
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    // weights
+    const double quiz_rate = 0.20;
+    const double lab_rate = 0.25;
+    const double proj_rate = 0.25;
+    const double exam_rate = 0.30;
+    
+    double quiz_score, lab_score, proj_score, exam_score;
+    
+    
+    //input
+    cout << "Enter Quiz Score: ";
+    cin >> quiz_score;
+    cout << "Enter Laboratory Score: ";
+    cin >> lab_score;
+    cout << "Enter Project Score: ";
+    cin >> proj_score;
+    cout << "Enter Exam Score: ";
+    cin >> exam_score;
+    
+    //compute
+    double WeightedGrade;
+    WeightedGrade = ((quiz_score*quiz_rate)+(lab_score*lab_rate)+(proj_score*proj_rate)+(exam_score*exam_rate));
+    
+    //output
+    cout << "---RESULTS--- \n";
+    cout << fixed << setprecision(2);
+    cout << "Weighted Grade:  " << WeightedGrade << endl;
+    
+    cout << fixed << setprecision(0);
+    double RoundedGrade = round(WeightedGrade);
+    cout << "Rounded Grade: " << RoundedGrade<< endl;
+    
+    cout <<"cast to int:  " << (int)WeightedGrade << endl;
+    
+    return 0;
+}
