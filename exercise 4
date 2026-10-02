@@ -1,0 +1,42 @@
+/******************************************************************************
+question 4
+*******************************************************************************/
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+  double wall_width, wall_height, numCoats, canCoverage;
+  
+  //input
+  cout << "Enter wall width:  ";
+  cin >> wall_width;
+  cout << "Enter wall height:  ";
+  cin >> wall_height;
+  cout << "Enter number of coats:  ";
+  cin >> numCoats;
+  cout << "Enter coverage per can:  ";
+  cin >> canCoverage;
+  
+  //computation
+  double wall_area = (wall_width*wall_height);
+  double total_paintarea = (wall_area*numCoats);
+  double exact_cans = (total_paintarea/canCoverage);
+  
+  //output
+  cout << "----RESULTS-----\n";
+  
+  cout << fixed << setprecision(2);
+  cout << "wall area: " << wall_area << endl;
+  cout << "total paint area: " << total_paintarea << endl;
+  cout << "exact cans: " << exact_cans << endl;
+  
+  cout << fixed << setprecision(0);
+  cout << "cans to buy: " << ceil(exact_cans) << endl;
+  
+  
+    return 0;
+}
