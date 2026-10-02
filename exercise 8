@@ -39,6 +39,5 @@ int main()
    cout << "round:  " << round(temp_average) << endl;
    
    
- 
     return 0;
 }
