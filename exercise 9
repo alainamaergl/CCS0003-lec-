@@ -1,0 +1,46 @@
+/******************************************************************************
+exercise 9
+*******************************************************************************/
+
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+int main()
+{
+   double base_tuition, processfee_input,downpayment;
+   int numInstall;
+   //input
+   cout << "Please enter the following:\n";
+   
+   cout << "Tuition:  ";
+   cin >> base_tuition;
+   cout << "Processing Fee (percentage):   ";
+   cin >> processfee_input;
+   cout << "Downpayment:  ";
+   cin >> downpayment;
+   cout << "Months Installment:  ";
+   cin >> numInstall;
+   
+   //calculation
+   double processfee_rate = (processfee_input/100.0);
+   
+   double final_processfee = (base_tuition * processfee_rate);
+   double adjstTuition = (base_tuition + final_processfee);
+   double remaining_balance = (adjstTuition - downpayment);
+   
+   double final_mthlyInstall = (remaining_balance / static_cast<double>(numInstall));
+   
+   //output
+   cout << "---Tuition Balance Summary----\n";
+   
+   cout << fixed << setprecision(2);
+   
+   cout << "Processing Fee:  " << final_processfee << endl;
+   cout << "Adjusted Tuition:  " << adjstTuition << endl;
+   cout << "Remaining Balance:  " << remaining_balance << endl;
+   cout << "Monthly Installment: " << final_mthlyInstall << endl;
+   
+ 
+    return 0;
+}
