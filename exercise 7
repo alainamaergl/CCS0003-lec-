@@ -1,0 +1,44 @@
+/******************************************************************************
+exercise 7
+*******************************************************************************/
+
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+int main()
+{
+    double x1, y1, x2, y2;
+    
+    //input
+    cout << "Enter Start (x1,y1)\n";
+    cout << "x1: ";
+    cin >> x1;
+    cout << "y1: ";
+    cin >> y1;
+    
+    cout << "Enter Target (x2,y2)\n";
+    cout << "x2: ";
+    cin >> x2;
+    cout << "y2: ";
+    cin >> y2;
+    
+    //calculation
+    double dx = (x2 - x1);
+    double dy = (y2 - y1);
+    double distance = (sqrt(pow(dx,2) + pow(dy,2)));
+    
+    //output
+    cout << "---RESULT---\n";
+    
+    cout << fixed << setprecision(3);
+    cout << "dx:  " << dx << endl;
+    cout << "dy:  " << dy << endl;
+    cout << "distance:  " << distance << endl;
+    
+    cout << fixed << setprecision(0);
+    cout << "rounded distance:  " << round(distance) << endl;
+    
+
+    return 0;
+}
