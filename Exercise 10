@@ -1,0 +1,64 @@
+/******************************************************************************
+exercise 10
+*******************************************************************************/
+
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <string>
+using namespace std;
+int main()
+{
+   string ProductName;
+   double unitPrice, disc_input, shpfee_box;
+   int quantity,unitBox;
+   
+   //input
+   cout << "Please enter product name:  ";
+   getline(cin, ProductName);
+   cout << "for " << ProductName << ", Please enter the following:\n";
+   
+   cout << "Price:  ";
+   cin >> unitPrice;
+   cout << "Quantity:  ";
+   cin >> quantity;
+   cout << "Discount %:  ";
+   cin >> disc_input;
+   cout << "Shipping Fee (per box):  ";
+   cin >> shpfee_box;
+   cout << "Units per box:  ";
+   cin >> unitBox;
+   
+   //calculation
+   double disc_rate = (disc_input / 100.0);
+   
+   double subtotal = (unitPrice * quantity);
+   double discountAmount = (subtotal * disc_rate);
+   double discountMerch = (subtotal - discountAmount);
+   
+   double exactBox = (static_cast<double>(quantity) / unitBox);
+   int boxesRequired = ceil(exactBox);
+   
+   double shippingTotal = (boxesRequired * shpfee_box);
+   double AmountDue = (discountMerch + shippingTotal);
+   
+   //output
+   
+   cout << fixed << setprecision(2);
+   
+   cout << "\n\tOFFICIAL RECEIPT\t\t\n";
+   cout <<"------------------------------------\n";
+   cout << "Subtotal:\t\t" << subtotal << endl;
+   cout << "Discount:\t\t" << discountAmount << endl;
+   cout << "Merchandise:\t\t" << discountMerch << endl;
+   cout << "Exact Boxes:\t\t" << exactBox << endl;
+   cout << "Boxes Required:\t\t" << boxesRequired << endl;
+   cout << "Shipping:\t\t" << shippingTotal << endl;
+   
+   cout << "-------------------------------------\n";
+   cout << "Amount Due:\t\t" << AmountDue << endl;
+   
+   
+   
+    return 0;
+}
