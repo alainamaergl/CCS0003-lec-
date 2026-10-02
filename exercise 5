@@ -1,1 +1,52 @@
+/******************************************************************************
+question 5
+*******************************************************************************/
 
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+ int attendees,seats_table;
+ 
+ //input
+ cout << "Enter number of Attendees: ";
+ cin >> attendees;
+ cout << "Enter number of seats per table: ";
+ cin >> seats_table;
+ 
+ //calculate
+ 
+ double exactTables = static_cast<double>(attendees)/seats_table;
+ int req_tables = ceil(exactTables);
+ int totalSeats = (req_tables*seats_table);
+ int unusedSeats = (totalSeats - attendees);
+ 
+ //output
+ 
+ cout << "---RESULT---\n";
+ 
+ cout << fixed << setprecision(2);
+ cout << "exact tables:  " << exactTables << endl;
+ 
+ cout << fixed << setprecision(0);
+ cout << "tables required:  " << req_tables << endl;
+ cout << "total seats:  " << totalSeats << endl;
+ cout << "unused seats:  " << unusedSeats << endl;
+
+ 
+  
+
+  
+    return 0;
+}
+
+
+ 
+  
+
+  
+    return 0;
+}
