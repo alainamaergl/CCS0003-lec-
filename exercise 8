@@ -1,0 +1,44 @@
+/******************************************************************************
+exercise 8
+*******************************************************************************/
+
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+int main()
+{
+   double t1, t2, t3;
+   
+   //input
+   cout << "Enter Temperature Readings\n";
+   
+   cout << "temp 1:  ";
+   cin >> t1;
+   cout << "temp 2:  ";
+   cin >> t2;
+   cout << "temp 3:  ";
+   cin >> t3;
+   
+   //compute
+   
+   double temp_average = ((t1 + t2 + t3)/3);
+   double difference = fabs(t1 - t3);
+   
+   //output
+   cout << "---RESULT---\n";
+   
+   cout << fixed << setprecision(3);
+   cout << "Average:  " << temp_average << endl;
+   cout << "|T1 - T3|:  " << difference << endl;
+   
+   cout << fixed << setprecision(0);
+   cout << "floor:  " << floor(temp_average) << endl;
+   cout << "ceil:  " << ceil(temp_average) << endl;
+   cout << "trunc:  " << trunc(temp_average) << endl;
+   cout << "round:  " << round(temp_average) << endl;
+   
+   
+ 
+    return 0;
+}
