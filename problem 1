@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+int main () {
+
+    int n;
+
+    cout << "Enter number: ";
+    cin >> n;
+
+    if (n > 0) {
+        if (n <= 9) {
+            cout << "number is positive\n"
+            << n << " is a 1-digit number";
+        } else if (n <= 99) {
+            cout << "number is positive\n"
+            << n << " is a 2-digit number";
+        } else if (n <= 999) {
+            cout << "number is positive\n"
+            << n << " is a 3-digit number";
+        } else if (n <= 9999) {
+            cout << "number is positive\n"
+            << n << " is a 4-digit number";
+        } else
+            cout << "only maximum of 4 digits is allowed";
+    } else
+        cout << "It is a non-positive number";
+
+    return 0;
+}
